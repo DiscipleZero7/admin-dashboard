@@ -17,6 +17,10 @@ a, a:visited {
     text-decoration: none;
 }
 
+hr {
+    border: 1px solid lightgray;
+}
+
 .main-layout {
     width: 100vw;
     height: 100vh;
@@ -30,6 +34,7 @@ a, a:visited {
 /* HEADER STYLES */
 .header {
     background-color: white;
+    filter: drop-shadow(0 5px 4px gray);
     grid-area: header;
 
     padding: 0 50px;
@@ -59,7 +64,7 @@ a, a:visited {
 }
 
 .search-input:focus {
-    outline: none;
+    outline-color: var(--blue);
 }
 
 .header-icon {
@@ -67,8 +72,8 @@ a, a:visited {
 }
 
 .profile-picture-container {
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
     grid-row: span 2;
 }
 
@@ -87,16 +92,13 @@ a, a:visited {
 }
 
 .notifications {
-    
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 25px;
 }
 
 .user-info {
-    
-
     display: grid;
     grid-template: 1fr 1fr / min-content 1fr;
     align-items: end;
@@ -109,16 +111,16 @@ h2 {
 }
 
 .posting-buttons {
-    
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    place-items: center;
+    justify-items: flex-end;
+    align-items: center;
 }
 
 .posting-buttons > button {
     color: white;
     font-weight: 900;
+    font-size: 1.1rem;
     width: 70%;
     height: 40%;
     border-radius: 25px;
@@ -166,14 +168,16 @@ h2 {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: min-content 1fr;
+    align-items: center;
     gap: 30px;
     margin-bottom: 1.5ch;
+    padding-left: 12px;
 }
 
 .icon {
-    width: 1em;
-    height: 1em;
-    padding-left: 20px;
+    width: 1.5em;
+    height: 1.5em;
+
     filter: invert(100%);
 }
 
@@ -186,7 +190,8 @@ h2 {
 
     display: grid;
     grid-template: min-content 1fr min-content 1fr/ 5fr 1fr;
-    gap: 20px;
+    row-gap: 10px;
+    column-gap: 20px;
 }
 
 .project-cards {
@@ -201,6 +206,7 @@ h2 {
 
 .card {
     background-color: white;
+    filter: drop-shadow(0 5px 4px gray);
     width: 400px;
     height: 200px;
     padding: 50px;
@@ -212,6 +218,10 @@ h2 {
     justify-content: flex-start;
 }
 
+.card > p {
+    color: gray
+}
+
 .card-icons {
     align-self: flex-end;
     margin-top: auto;
@@ -221,13 +231,14 @@ h2 {
 }
 
 .card-icons > img {
+    filter: invert(25%);
     width: 30px;
     height: 30px;
 }
 
 .announcements {
-    position: relative;
     background-color: white;
+    filter: drop-shadow(0 5px 4px gray);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -235,8 +246,13 @@ h2 {
     border-radius: 20px;
 }
 
+.announcement-card > p {
+    color: gray
+}
+
 .trending {
     background-color: white;
+    filter: drop-shadow(0 5px 4px gray);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -244,8 +260,18 @@ h2 {
 }
 
 .trending-profile {
+    color: gray;
     display: grid;
     padding: 20px;
     grid-template: 1fr 1fr / min-content 1fr;
     column-gap: 10px;
+}
+
+.trending-profile > p:first-of-type {
+    color: black;
+    align-self: flex-end;
+}
+
+.trending-header {
+    margin-top: 50px;
 }
